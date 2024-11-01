@@ -1,16 +1,29 @@
 import React from "react";
+import FormInput from "./FormInput";
+import Button from "./Button/Button";
 
-const LoginForm: React.FC = () => {
-    const onChange:number   () => {
+interface LoginForm {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-    }
+const LoginForm: React.FC<LoginForm> = ({ onChange }) => {
   return (
     <>
       <div>
         <form>
-          <input type="email" name="email" id="email" />
-          <input type="password" name="password" id="password" />
-          <button>Авторизоваться</button>
+          <FormInput
+            type={"email"}
+            name={"email"}
+            id={"email"}
+            placeholder={"Email"}
+          />
+          <FormInput
+            type={"password"}
+            name={"password"}
+            id={"password"}
+            placeholder={"Password"}
+          />
+          <Button>Авторизироваться</Button>
         </form>
       </div>
     </>
